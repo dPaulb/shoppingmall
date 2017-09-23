@@ -1,0 +1,47 @@
+<!-- pants-->
+<% include ./include/header.ejs %>
+
+
+<div class="main">
+    <div class="container container--wide">
+
+
+        <div class="image-grid are-images-unloaded" data-js="image-grid">
+            <div class="image-grid__col-sizer"></div>
+            <div class="image-grid__gutter-sizer"></div>
+
+            <% for(var key in result){ %>
+
+            <div class="image-grid__item">
+                <a href="/detail?id=<%= result[key].split('/')[result[key].split('/').length - 1] %>">
+                    <img class="image-grid__image" src="http://<%= result[key] %>">
+                    <span>제목</span>
+                </a>
+            </div>
+
+            <% } %>
+
+        </div>
+
+        <div class="scroller-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+            <p class="scroller-status__message infinite-scroll-last">End of content</p>
+            <p class="scroller-status__message infinite-scroll-error">No more pages to load</p>
+        </div>
+
+        <p class="pagination">
+            <a class="pagination__next" href="page3.html">Next page</a>
+        </p>
+
+        <footer class="full-page-demo-footer"></footer>
+
+    </div>
+</div>
+
+
+<% include ./include/footer.ejs %>

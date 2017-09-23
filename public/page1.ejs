@@ -1,0 +1,133 @@
+<!-- home page && (shirts)-->
+<!doctype html>
+<html lang="en" class="export">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Infinite Scroll &#xB7; Masonry images</title>
+
+    <link rel="stylesheet" href="css/infinite-scroll-docs.css?3" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .jumbotron, .jumbotron-fluid {
+            margin-bottom: 0px;
+            background-image: url('imgs/banner.jpg');
+            object-fit: fill;
+
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3" style="color:white">Shopping Mall Main Banner</h1>
+        <p class="lead" style="color:white">Some Senetences here.</p>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="/">Shopping Mall Name</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/shirts">Shirts</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" href="/pants">Pants</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" href="/shoes">Shoes</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" href="/accessory">Accessory</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="main">
+    <div class="container container--wide">
+
+
+        <div class="image-grid are-images-unloaded" data-js="image-grid">
+            <div class="image-grid__col-sizer"></div>
+            <div class="image-grid__gutter-sizer"></div>
+
+            <% for(var key in result){ %>
+
+            <div class="image-grid__item">
+                <a href="/detail?id=<%= result[key].split('/')[result[key].split('/').length - 1] %>">
+                    <img class="image-grid__image" src="http://<%= result[key] %>">
+                    <span>제목</span>
+                </a>
+            </div>
+
+            <% } %>
+
+        </div>
+
+        <div class="scroller-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+            <p class="scroller-status__message infinite-scroll-last">End of content</p>
+            <p class="scroller-status__message infinite-scroll-error">No more pages to load</p>
+        </div>
+
+        <p class="pagination">
+            <a class="pagination__next" href="/page2">Next page</a>
+        </p>
+
+        <footer class="full-page-demo-footer"></footer>
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Footer
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Special title treatment</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+<script src="js/infinite-scroll-docs.min.js?1"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+</body>
+</html>

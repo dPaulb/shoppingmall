@@ -1,0 +1,26 @@
+{
+  "name": "ShoppingMall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cheerio": "^1.0.0-rc.2",
+    "co": "^4.6.0",
+    "ejs": "^2.5.7",
+    "engine": "^0.1.12",
+    "express": "^4.15.4",
+    "infinite-scroll": "^3.0.1",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7",
+    "request": "^2.82.0",
+    "view": "^1.1.1"
+  }
+}
